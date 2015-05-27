@@ -1,4 +1,6 @@
+package pkgfinal.project;
 
+/*
 
 /*
  * To change this template, choose Tools | Templates
@@ -38,7 +40,6 @@ public class FinalProject extends JComponent implements KeyListener{
     boolean right = false;
     boolean up = false;
     boolean down = false;
-    boolean semiCircle = false;
     boolean moving = false;
     boolean spacebar = false;
     boolean gCircle1 = true;
@@ -172,8 +173,13 @@ public class FinalProject extends JComponent implements KeyListener{
                 stage = 1;
             }
             
+            //reset life to 3
+            life = 3;
+            
         }else if(stage == 1) //stage1
         {
+            
+            
             //character
             Color me = new Color(237, 125, 69);
             g.setColor(me);
