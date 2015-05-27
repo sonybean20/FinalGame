@@ -160,23 +160,18 @@ public class FinalProject extends JComponent implements KeyListener{
         g.fillOval(circle1X, circle1Y, 26, 26);
         
         //black circle2
-        g.setColor(Color.BLACK);
         g.fillOval(circle2X, circle2Y, 26, 26);
         
         //black circle3
-        g.setColor(Color.BLACK);
         g.fillOval(circle3X, circle3Y, 26, 26);
         
         //black circle3
-        g.setColor(Color.BLACK);
         g.fillOval(circle3X, circle3Y, 26, 26);
         
         //black circle4
-        g.setColor(Color.BLACK);
         g.fillOval(circle4X, circle4Y, 26, 26);
         
         //black circle5
-        g.setColor(Color.BLACK);
         g.fillOval(circle5X, circle5Y, 26, 26);
         
         //green circle1
@@ -194,7 +189,6 @@ public class FinalProject extends JComponent implements KeyListener{
         //green circle2
         if(gCircle2)
         {
-            g.setColor(gCircle);
             g.fillOval(gCircle2X, gCircle2Y, 26, 26);
         }else
         {
@@ -205,7 +199,6 @@ public class FinalProject extends JComponent implements KeyListener{
         //green circle3
         if(gCircle3)
         {
-            g.setColor(gCircle);
             g.fillOval(gCircle3X, gCircle3Y, 26, 26);
         }else
         {
@@ -216,7 +209,6 @@ public class FinalProject extends JComponent implements KeyListener{
         //green circle4
         if(gCircle4)
         {
-            g.setColor(gCircle);
             g.fillOval(gCircle4X, gCircle4Y, 26, 26);
         }else
         {
@@ -227,7 +219,6 @@ public class FinalProject extends JComponent implements KeyListener{
         //green circle5
         if(gCircle5)
         {
-            g.setColor(gCircle);
             g.fillOval(gCircle5X, gCircle5Y, 26, 26);
         }else
         {
