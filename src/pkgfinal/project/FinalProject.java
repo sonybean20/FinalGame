@@ -202,6 +202,38 @@ public class FinalProject extends JComponent implements KeyListener{
             gCircle2Y = -13;
         }
         
+        //green circle3
+        if(gCircle3)
+        {
+            g.setColor(gCircle);
+            g.fillOval(gCircle3X, gCircle3Y, 26, 26);
+        }else
+        {
+            gCircle3X = -13;
+            gCircle3Y = -13;
+        }
+        
+        //green circle4
+        if(gCircle4)
+        {
+            g.setColor(gCircle);
+            g.fillOval(gCircle4X, gCircle4Y, 26, 26);
+        }else
+        {
+            gCircle4X = -13;
+            gCircle4Y = -13;
+        }
+        
+        //green circle5
+        if(gCircle5)
+        {
+            g.setColor(gCircle);
+            g.fillOval(gCircle5X, gCircle5Y, 26, 26);
+        }else
+        {
+            gCircle5X = -13;
+            gCircle5Y = -13;
+        }
         
         //Show lives left
         g.setColor(Color.black);
