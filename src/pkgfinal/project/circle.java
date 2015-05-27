@@ -41,6 +41,10 @@ public class circle extends JComponent{
     boolean quarter = false;
     
     
+    double theta = 0;
+    int circleX ;
+    int circleY ;
+    
     // drawing of the game happens in here
     // we use the Graphics object, g, to perform the drawing
     // NOTE: This is already double buffered!(helps with framerate/speed)
@@ -60,6 +64,12 @@ public class circle extends JComponent{
         
         g.drawString("xx and yy" + xx + "  " + yy, 50, 50);
         g.drawOval(xx, yy, 30, 30);
+        
+        g.drawString("theta    " + theta, 300, 50);
+        g.drawString("x   " +  circleX, 300, 100);
+        g.drawString("y   " +  circleY, 300, 150);
+        g.fillOval( circleX, circleY, 25, 25);
+        
         
         // GAME DRAWING ENDS HERE
     }
@@ -162,10 +172,12 @@ public class circle extends JComponent{
                     semiCircle = false;
                 }
             }
-             
+              
             
             
-            
+            theta += 0.07;
+            circleX = (int) (200+Math.cos(theta)*50);
+            circleY = (int) (200+Math.sin(theta)*50);
             // GAME LOGIC ENDS HERE 
             
             // update the drawing (calls paintComponent)

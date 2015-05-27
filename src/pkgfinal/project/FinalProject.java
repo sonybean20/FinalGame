@@ -51,7 +51,6 @@ public class FinalProject extends JComponent implements KeyListener{
     //rounds
     int stage = 0;
     
-    
     //life 
     int life = 3;
     
@@ -179,7 +178,6 @@ public class FinalProject extends JComponent implements KeyListener{
         }else if(stage == 1) //stage1
         {
             
-            
             //character
             Color me = new Color(237, 125, 69);
             g.setColor(me);
@@ -270,6 +268,20 @@ public class FinalProject extends JComponent implements KeyListener{
         {
             
             
+            
+            
+            
+            
+            
+            //if all green circles are gone
+            if(!gCircle1 && !gCircle2 && !gCircle3 && !gCircle4 && !gCircle5)
+            {
+                //reset life
+                life = 3;
+                
+                //move on to stage 3
+                stage = 3;
+            }
             
         }else if(stage ==3) //stage 3
         {
