@@ -47,14 +47,16 @@ public class FinalProject extends JComponent implements KeyListener{
     boolean gCircle4 = true;
     boolean gCircle5 = true;
     
+    //rounds
+    int stage = 0;
     
     
     //life 
     int life = 3;
     
     //character
-    int playerX = 300;
-    int playerY = 450;
+    int playerX = 400;
+    int playerY = 550;
     int playerRadius = 13;
     int playerCenterX = playerX + 13;
     int playerCenterY = playerY + 13;
@@ -149,86 +151,135 @@ public class FinalProject extends JComponent implements KeyListener{
             g.fillRect(0, HEIGHT-6*i, WIDTH, 6);
         }
         
-        
-        //character
-        Color me = new Color(237, 125, 69);
-        g.setColor(me);
-        g.fillOval(playerX, playerY, 26, 26);
+        if(stage ==0)  //instructions page
+        {
+            //fill background
+            g.setColor(Color.white);
+            g.fillRect(0, 0, 800, 600);
+            
+            g.setColor(Color.black);
+            g.drawString("Instructions", 380, 100);
+            g.drawString("The goal of this game is to get all the green circles that are on the screen.", 200, 130);
+            g.drawString("Use arrow keys to move your player." , 200, 150);
+            g.drawString("Use space bar to gain a life by hitting a green circle.", 200, 170);
+            g.drawString("You lose a life if you hit a black circle.", 200, 190);
+            g.drawString("Press space bar to move onto the next stage.", 200, 250);
+            
+            //if spacebar is pressed
+            if(spacebar)
+            {
+                //move onto stage 1
+                stage = 1;
+            }
+            
+        }else if(stage == 1) //stage1
+        {
+            //character
+            Color me = new Color(237, 125, 69);
+            g.setColor(me);
+            g.fillOval(playerX, playerY, 26, 26);
 
-        //black circle1
-        g.setColor(Color.BLACK);
-        g.fillOval(circle1X, circle1Y, 26, 26);
-        
-        //black circle2
-        g.fillOval(circle2X, circle2Y, 26, 26);
-        
-        //black circle3
-        g.fillOval(circle3X, circle3Y, 26, 26);
-        
-        //black circle3
-        g.fillOval(circle3X, circle3Y, 26, 26);
-        
-        //black circle4
-        g.fillOval(circle4X, circle4Y, 26, 26);
-        
-        //black circle5
-        g.fillOval(circle5X, circle5Y, 26, 26);
-        
-        //green circle1
-        Color gCircle = new Color(103, 202, 121);
-        if(gCircle1)
+            //black circle1
+            g.setColor(Color.BLACK);
+            g.fillOval(circle1X, circle1Y, 26, 26);
+
+            //black circle2
+            g.fillOval(circle2X, circle2Y, 26, 26);
+
+            //black circle3
+            g.fillOval(circle3X, circle3Y, 26, 26);
+
+            //black circle3
+            g.fillOval(circle3X, circle3Y, 26, 26);
+
+            //black circle4
+            g.fillOval(circle4X, circle4Y, 26, 26);
+
+            //black circle5
+            g.fillOval(circle5X, circle5Y, 26, 26);
+
+            //green circle1
+            Color gCircle = new Color(103, 202, 121);
+            if(gCircle1)
+            {
+                g.setColor(gCircle);
+                g.fillOval(gCircle1X, gCircle1Y, 26, 26);
+            }else
+            {
+                gCircle1X = -13;
+                gCircle1Y = -13;
+            }
+
+            //green circle2
+            if(gCircle2)
+            {
+                g.fillOval(gCircle2X, gCircle2Y, 26, 26);
+            }else
+            {
+                gCircle2X = -13;
+                gCircle2Y = -13;
+            }
+
+            //green circle3
+            if(gCircle3)
+            {
+                g.fillOval(gCircle3X, gCircle3Y, 26, 26);
+            }else
+            {
+                gCircle3X = -13;
+                gCircle3Y = -13;
+            }
+
+            //green circle4
+            if(gCircle4)
+            {
+                g.fillOval(gCircle4X, gCircle4Y, 26, 26);
+            }else
+            {
+                gCircle4X = -13;
+                gCircle4Y = -13;
+            }
+
+            //green circle5
+            if(gCircle5)
+            {
+                g.fillOval(gCircle5X, gCircle5Y, 26, 26);
+            }else
+            {
+                gCircle5X = -13;
+                gCircle5Y = -13;
+            }
+            
+            //if all green circles are gone
+            if(!gCircle1 && !gCircle2 && !gCircle3 && !gCircle4 && !gCircle5)
+            {
+                //reset life
+                life = 3;
+                
+                //move on to stage 2
+                stage = 2;
+            }
+            
+        }else if(stage ==2) //stage 2
         {
-            g.setColor(gCircle);
-            g.fillOval(gCircle1X, gCircle1Y, 26, 26);
-        }else
+            
+            
+            
+        }else if(stage ==3) //stage 3
         {
-            gCircle1X = -13;
-            gCircle1Y = -13;
+            
+        }
+            
+        
+        //if not on the instruction page
+        if( stage > 0)
+        {
+            //Show lives left
+            g.setColor(Color.black);
+            g.drawString("Stage " + stage, 70, 40);
+            g.drawString("Life " + life, 70, 60);
         }
         
-        //green circle2
-        if(gCircle2)
-        {
-            g.fillOval(gCircle2X, gCircle2Y, 26, 26);
-        }else
-        {
-            gCircle2X = -13;
-            gCircle2Y = -13;
-        }
-        
-        //green circle3
-        if(gCircle3)
-        {
-            g.fillOval(gCircle3X, gCircle3Y, 26, 26);
-        }else
-        {
-            gCircle3X = -13;
-            gCircle3Y = -13;
-        }
-        
-        //green circle4
-        if(gCircle4)
-        {
-            g.fillOval(gCircle4X, gCircle4Y, 26, 26);
-        }else
-        {
-            gCircle4X = -13;
-            gCircle4Y = -13;
-        }
-        
-        //green circle5
-        if(gCircle5)
-        {
-            g.fillOval(gCircle5X, gCircle5Y, 26, 26);
-        }else
-        {
-            gCircle5X = -13;
-            gCircle5Y = -13;
-        }
-        
-        //Show lives left
-        g.setColor(Color.black);
-        g.drawString("Life " + life, 70, 60);
        
         
         // GAME DRAWING ENDS HERE
@@ -258,8 +309,8 @@ public class FinalProject extends JComponent implements KeyListener{
             //if there are no lives left
            if(life == 0)
             {
-                //game over
-                done = true;
+                //go back to the instruction page
+                stage = 0;
             }
             
             //moving player
@@ -387,8 +438,9 @@ public class FinalProject extends JComponent implements KeyListener{
                     distance(playerCenterX, playerCenterY, circle4CenterX, circle4CenterY) < 26 ||
                     distance(playerCenterX, playerCenterY, circle5CenterX, circle5CenterY) < 26 )
             {
-                playerX = 100;
-                playerY = 300;
+                //reset player position
+                playerX = 400;
+                playerY = 550;
                 life -=1;
             }
             
@@ -403,6 +455,27 @@ public class FinalProject extends JComponent implements KeyListener{
             if(gCircle2 && distance(playerCenterX, playerCenterY, gCircle2CenterX, gCircle2CenterY) < 26 && spacebar)
             {
                 gCircle2 = false; //make it disapear
+                life +=1;
+            }
+            
+            //green circle3 collision
+            if(gCircle3 && distance(playerCenterX, playerCenterY, gCircle3CenterX, gCircle3CenterY) < 26 && spacebar)
+            {
+                gCircle3 = false; //make it disappear
+                life +=1;
+            }
+            
+            //green circle4 collision
+            if(gCircle4 && distance(playerCenterX, playerCenterY, gCircle4CenterX, gCircle4CenterY) < 26 && spacebar)
+            {
+                gCircle4 = false; //make it disappear
+                life +=1;
+            }
+            
+            //green circle5 collision
+            if(gCircle5 && distance(playerCenterX, playerCenterY, gCircle5CenterX, gCircle5CenterY) < 26 && spacebar)
+            {
+                gCircle5 = false; //make it disappear
                 life +=1;
             }
             
