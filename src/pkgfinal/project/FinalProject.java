@@ -48,7 +48,7 @@ public class FinalProject extends JComponent implements KeyListener{
     boolean gCircle4 = true;
     boolean gCircle5 = true;
     
-    //rounds
+    //stage
     int stage = 0;
     
     //life 
