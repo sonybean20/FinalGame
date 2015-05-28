@@ -172,8 +172,6 @@ public class FinalProject extends JComponent implements KeyListener{
                 stage = 1;
             }
             
-            //reset life to 3
-            life = 3;
             
         }else if(stage == 1) //stage1
         {
@@ -254,15 +252,7 @@ public class FinalProject extends JComponent implements KeyListener{
                 gCircle5Y = -13;
             }
             
-            //if all green circles are gone
-            if(!gCircle1 && !gCircle2 && !gCircle3 && !gCircle4 && !gCircle5)
-            {
-                //reset life
-                life = 3;
-                
-                //move on to stage 2
-                stage = 2;
-            }
+            
             
         }else if(stage ==2) //stage 2
         {
@@ -329,6 +319,41 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 //go back to the instruction page
                 stage = 0;
+                
+                //reset life
+                life = 3;
+                
+                //reset booleans
+                gCircle1 = true;
+                gCircle2 = true;
+                gCircle3 = true;
+                gCircle4 = true;
+                gCircle5 = true;
+                
+                //reset player position
+                playerX = 400;
+                playerY = 550;
+            }
+           
+            //if all green circles are gone
+            if(!gCircle1 && !gCircle2 && !gCircle3 && !gCircle4 && !gCircle5)
+            {
+                //reset life
+                life = 3;
+                
+                //reset booleans
+                gCircle1 = true;
+                gCircle2 = true;
+                gCircle3 = true;
+                gCircle4 = true;
+                gCircle5 = true;
+                
+                //reset player position
+                playerX = 400;
+                playerY = 550;
+                
+                //move on to next stage
+                stage += 1;
             }
             
             //moving player
@@ -349,32 +374,22 @@ public class FinalProject extends JComponent implements KeyListener{
                 playerY -= 5;
             }
             
-            //if player moves off the screen
-            //life - 1
-            //reset player's position to (100,300)
+            //make player stay on the screen
             if(playerX < 0) // moving off the left hand side
             {
-                life -= 1;
-                playerX = 100;
-                playerY = 300;
+                playerX = 0;
             }
             if(playerX + playerRadius*2 > WIDTH) // off the right hand side
             {
-                life -= 1;
-                playerX = 100;
-                playerY = 300;
+                playerX = WIDTH - playerRadius*2;
             } 
             if(playerY < 0) // moving off the left hand side
             {
-                life -= 1;
-                playerX = 100;
-                playerY = 300;
+                playerY = 0;
             }
             if(playerY + playerRadius*2 > HEIGHT) // off the right hand side
             {
-                life -= 1;
-                playerX = 100;
-                playerY = 300;
+                playerY = HEIGHT - playerRadius*2;
             }
             
             //background colour change
@@ -396,37 +411,41 @@ public class FinalProject extends JComponent implements KeyListener{
             }
             
             
-            
-            //black circles moving
-            
-            //circle1 2 3 4 5
-            //moving horizontally
-            if(moving)
+            if(stage == 1)
             {
-                circle1X -= 10;
-                circle2X += 10;
-                circle3X -= 10;
-                circle4X += 10;
-                circle5X -= 10;
-                
-                if(circle1X == 0)
+                 
+                //black circles moving
+
+                //circle1 2 3 4 5
+                //moving horizontally
+                if(moving)
                 {
-                    moving = false;
-                }
-            }else{
-                //change direction
-                
-                circle1X += 10;
-                circle2X -= 10;
-                circle3X += 10;
-                circle4X -= 10;
-                circle5X += 10;
-                
-                if(circle1X == 790)
-                {
-                    moving = true;
+                    circle1X -= 10;
+                    circle2X += 10;
+                    circle3X -= 10;
+                    circle4X += 10;
+                    circle5X -= 10;
+
+                    if(circle1X == 0)
+                    {
+                        moving = false;
+                    }
+                }else{
+                    //change direction
+
+                    circle1X += 10;
+                    circle2X -= 10;
+                    circle3X += 10;
+                    circle4X -= 10;
+                    circle5X += 10;
+
+                    if(circle1X == 790)
+                    {
+                        moving = true;
+                    }
                 }
             }
+                
             
             //update center coordinates
             playerCenterX = playerX + 13;
