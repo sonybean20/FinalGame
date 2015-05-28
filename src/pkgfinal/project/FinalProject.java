@@ -54,6 +54,12 @@ public class FinalProject extends JComponent implements KeyListener{
     //life 
     int life = 3;
     
+    //angle for rotation
+    double theta1 = 0;
+    double theta2 = 90;
+    double theta3 = 180;
+    double theta4 = 270;
+    
     //character
     int playerX = 400;
     int playerY = 550;
@@ -253,7 +259,6 @@ public class FinalProject extends JComponent implements KeyListener{
             }
             
             
-            
         }else if(stage ==2) //stage 2
         {
             
@@ -268,6 +273,13 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 //reset life
                 life = 3;
+                
+                //reset booleans
+                gCircle1 = true;
+                gCircle2 = true;
+                gCircle3 = true;
+                gCircle4 = true;
+                gCircle5 = true;
                 
                 //move on to stage 3
                 stage = 3;
