@@ -49,16 +49,17 @@ public class FinalProject extends JComponent implements KeyListener{
     boolean gCircle5 = true;
     
     //stage
-    int stage = 0;
+    int stage = 2;
     
     //life 
     int life = 3;
     
     //angle for rotation
     double theta1 = 0;
-    double theta2 = 90;
-    double theta3 = 180;
-    double theta4 = 270;
+    double theta2 = Math.PI;
+    double theta3 = 0;
+    double theta4 = Math.PI;
+    double theta5 = 0;
     
     //character
     int playerX = 400;
@@ -179,8 +180,9 @@ public class FinalProject extends JComponent implements KeyListener{
             }
             
             
-        }else if(stage == 1) //stage1
+        }else //during game
         {
+            ////paint circles
             
             //character
             Color me = new Color(237, 125, 69);
@@ -257,50 +259,15 @@ public class FinalProject extends JComponent implements KeyListener{
                 gCircle5X = -13;
                 gCircle5Y = -13;
             }
+                        
             
-            
-        }else if(stage ==2) //stage 2
-        {
-            
-            
-            
-            
-            
-            
-            
-            //if all green circles are gone
-            if(!gCircle1 && !gCircle2 && !gCircle3 && !gCircle4 && !gCircle5)
-            {
-                //reset life
-                life = 3;
-                
-                //reset booleans
-                gCircle1 = true;
-                gCircle2 = true;
-                gCircle3 = true;
-                gCircle4 = true;
-                gCircle5 = true;
-                
-                //move on to stage 3
-                stage = 3;
-            }
-            
-        }else if(stage ==3) //stage 3
-        {
-            
-        }
-            
-        
-        //if not on the instruction page
-        if( stage > 0)
-        {
             //Show lives left
             g.setColor(Color.black);
             g.drawString("Stage " + stage, 70, 40);
             g.drawString("Life " + life, 70, 60);
         }
         
-       
+         
         
         // GAME DRAWING ENDS HERE
     }
@@ -422,13 +389,11 @@ public class FinalProject extends JComponent implements KeyListener{
                 }
             }
             
-            
-            if(stage == 1)
+            //different stages
+            if(stage == 1) //stage 1
             {
                  
-                //black circles moving
-
-                //circle1 2 3 4 5
+                //black circle1 2 3 4 5
                 //moving horizontally
                 if(moving)
                 {
@@ -456,6 +421,61 @@ public class FinalProject extends JComponent implements KeyListener{
                         moving = true;
                     }
                 }
+            }else if(stage == 2)
+            {
+                
+                //black circles - circle motion
+                
+                //black circle 1
+                theta1 += 0.07;
+                circle1X = (int) (100+Math.cos(theta1)*80) - 13;
+                circle1Y = (int) (100+Math.sin(theta1)*80) - 13;
+                
+                //black circle 2
+                theta2 += 0.08;
+                circle2X = (int) (700+Math.cos(theta2)*45) - 13;
+                circle2Y = (int) (100+Math.sin(theta2)*45) - 13;
+                
+                //black circle 3
+                theta3 += 0.09;
+                circle3X = (int) (400+Math.cos(theta3)*100) - 13;
+                circle3Y = (int) (300+Math.sin(theta3)*100) - 13;
+                
+                //black circle 4
+                theta4 += 0.08;
+                circle4X = (int) (100+Math.cos(theta4)*70) - 13;
+                circle4Y = (int) (500+Math.sin(theta4)*70) - 13;
+                
+                //black circle 5
+                theta5 += 0.04;
+                circle5X = (int) (700+Math.cos(theta5)*60) - 13;
+                circle5Y = (int) (500+Math.sin(theta5)*60) - 13;
+                
+                
+                //green circles - in the center of black circles
+                
+                //green circle1
+                gCircle1X = 100 - 13;
+                gCircle1Y = 100 - 13;
+                
+                 //green circle2
+                gCircle2X = 700 - 13;
+                gCircle2Y = 100 - 13;
+                
+                 //green circle3
+                gCircle3X = 400 - 13;
+                gCircle3Y = 300 - 13;
+                
+                                 //green circle4
+                gCircle4X = 100 - 13;
+                gCircle4Y = 500 - 13;
+                
+                 //green circle5
+                gCircle5X = 700 - 13;
+                gCircle5Y = 500 - 13;
+                
+                                
+                
             }
                 
             
