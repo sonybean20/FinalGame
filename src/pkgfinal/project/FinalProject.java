@@ -49,7 +49,7 @@ public class FinalProject extends JComponent implements KeyListener{
     boolean gCircle5 = true;
     
     //stage
-    int stage = 2;
+    int stage = 0;
     
     //life 
     int life = 3;
@@ -194,18 +194,23 @@ public class FinalProject extends JComponent implements KeyListener{
             g.fillOval(circle1X, circle1Y, 26, 26);
 
             //black circle2
+            g.setColor(Color.BLACK);
             g.fillOval(circle2X, circle2Y, 26, 26);
 
             //black circle3
+            g.setColor(Color.BLACK);
             g.fillOval(circle3X, circle3Y, 26, 26);
 
             //black circle3
+            g.setColor(Color.BLACK);
             g.fillOval(circle3X, circle3Y, 26, 26);
 
             //black circle4
+            g.setColor(Color.BLACK);
             g.fillOval(circle4X, circle4Y, 26, 26);
 
             //black circle5
+            g.setColor(Color.BLACK);
             g.fillOval(circle5X, circle5Y, 26, 26);
 
             //green circle1
@@ -223,6 +228,7 @@ public class FinalProject extends JComponent implements KeyListener{
             //green circle2
             if(gCircle2)
             {
+                g.setColor(gCircle);
                 g.fillOval(gCircle2X, gCircle2Y, 26, 26);
             }else
             {
@@ -233,6 +239,7 @@ public class FinalProject extends JComponent implements KeyListener{
             //green circle3
             if(gCircle3)
             {
+                g.setColor(gCircle);
                 g.fillOval(gCircle3X, gCircle3Y, 26, 26);
             }else
             {
@@ -243,6 +250,7 @@ public class FinalProject extends JComponent implements KeyListener{
             //green circle4
             if(gCircle4)
             {
+                g.setColor(gCircle);
                 g.fillOval(gCircle4X, gCircle4Y, 26, 26);
             }else
             {
@@ -253,6 +261,7 @@ public class FinalProject extends JComponent implements KeyListener{
             //green circle5
             if(gCircle5)
             {
+                g.setColor(gCircle);
                 g.fillOval(gCircle5X, gCircle5Y, 26, 26);
             }else
             {
@@ -312,6 +321,31 @@ public class FinalProject extends JComponent implements KeyListener{
                 //reset player position
                 playerX = 400;
                 playerY = 550;
+                
+                //reset black circles' positions
+                circle1X = 400;
+                circle1Y = 100;
+                circle2X = 400;
+                circle2Y = 200;
+                circle3X = 400;
+                circle3Y = 300;
+                circle4X = 400;
+                circle4Y = 400;
+                circle5X = 400;
+                circle5Y = 500;
+                
+                //reset green circles' positions
+                gCircle1X = 700;
+                gCircle1Y = 100;
+                gCircle2X = 550;
+                gCircle2Y = 200;
+                gCircle3X = 400;
+                gCircle3Y = 300;
+                gCircle4X = 250;
+                gCircle4Y = 400;
+                gCircle5X = 100;
+                gCircle5Y = 500; 
+                
             }
            
             //if all green circles are gone
@@ -433,8 +467,8 @@ public class FinalProject extends JComponent implements KeyListener{
                 
                 //black circle 2
                 theta2 += 0.08;
-                circle2X = (int) (700+Math.cos(theta2)*45) - 13;
-                circle2Y = (int) (100+Math.sin(theta2)*45) - 13;
+                circle2X = (int) (700+Math.cos(theta2)*60) - 13;
+                circle2Y = (int) (100+Math.sin(theta2)*60) - 13;
                 
                 //black circle 3
                 theta3 += 0.09;
@@ -458,23 +492,27 @@ public class FinalProject extends JComponent implements KeyListener{
                 gCircle1X = 100 - 13;
                 gCircle1Y = 100 - 13;
                 
-                 //green circle2
+                //green circle2
                 gCircle2X = 700 - 13;
                 gCircle2Y = 100 - 13;
                 
-                 //green circle3
+                //green circle3
                 gCircle3X = 400 - 13;
                 gCircle3Y = 300 - 13;
                 
-                                 //green circle4
+                //green circle4
                 gCircle4X = 100 - 13;
                 gCircle4Y = 500 - 13;
                 
-                 //green circle5
+                //green circle5
                 gCircle5X = 700 - 13;
                 gCircle5Y = 500 - 13;
                 
-                                
+            }else if(stage == 3)  //stage 3
+            {
+                
+                
+                
                 
             }
                 
@@ -497,6 +535,21 @@ public class FinalProject extends JComponent implements KeyListener{
             
             circle5CenterX = circle5X + 13;
             circle5CenterY = circle5Y + 13;
+            
+            gCircle1CenterX = gCircle1X + 13;
+            gCircle1CenterY = gCircle1Y + 13;
+            
+            gCircle2CenterX = gCircle2X + 13;
+            gCircle2CenterY = gCircle2Y + 13;
+            
+            gCircle3CenterX = gCircle3X + 13;
+            gCircle3CenterY = gCircle3Y + 13;
+            
+            gCircle4CenterX = gCircle4X + 13;
+            gCircle4CenterY = gCircle4Y + 13;
+            
+            gCircle5CenterX = gCircle5X + 13;
+            gCircle5CenterY = gCircle5Y + 13;
             
             
             //collisions
