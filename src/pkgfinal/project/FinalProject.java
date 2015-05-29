@@ -17,6 +17,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 
 
 /**
@@ -36,12 +37,19 @@ public class FinalProject extends JComponent implements KeyListener{
     long desiredFPS = 60;
     long desiredTime = (1000)/desiredFPS;
     
+    //characters-mouse, cat, cheese
+    BufferedImage mouse = ImageHelper.loadImage("pics//mouse.png");
+    BufferedImage cat1 = ImageHelper.loadImage("pics//cat.png");
+    BufferedImage cheese1 = ImageHelper.loadImage("pics//cheese.png");
+    
+    
     boolean left = false;
     boolean right = false;
     boolean up = false;
     boolean down = false;
     boolean moving = false;
     boolean spacebar = false;
+    
     boolean gCircle1 = true;
     boolean gCircle2 = true;
     boolean gCircle3 = true;
@@ -56,9 +64,9 @@ public class FinalProject extends JComponent implements KeyListener{
     
     //angle for rotation
     double theta1 = 0;
-    double theta2 = Math.PI;
+    double theta2 = 0;
     double theta3 = 0;
-    double theta4 = Math.PI;
+    double theta4 = 0;
     double theta5 = 0;
     
     //character
@@ -68,7 +76,7 @@ public class FinalProject extends JComponent implements KeyListener{
     int playerCenterX = playerX + 13;
     int playerCenterY = playerY + 13;
     
-    //Black Circles
+    //Black Circles - cat
     int circle1X = 400;
     int circle1Y = 100;
     int circle1Radius = 13;
@@ -100,7 +108,7 @@ public class FinalProject extends JComponent implements KeyListener{
     int circle5CenterY = circle5Y + 13;
     
     
-    //Green circles
+    //Green circles - cheese 
     int gCircle1X = 700;
     int gCircle1Y = 100;
     int gCircle1Radius = 13;
@@ -179,7 +187,6 @@ public class FinalProject extends JComponent implements KeyListener{
                 stage = 1;
             }
             
-            
         }else //during game
         {
             ////paint circles
@@ -188,6 +195,10 @@ public class FinalProject extends JComponent implements KeyListener{
             Color me = new Color(237, 125, 69);
             g.setColor(me);
             g.fillOval(playerX, playerY, 26, 26);
+            g.drawImage(mouse, playerX, playerY, null);
+            g.drawImage(cat1, playerX, playerY, null);
+            g.drawImage(cheese1, playerX, playerY, null);
+            
 
             //black circle1
             g.setColor(Color.BLACK);
