@@ -50,7 +50,16 @@ public class FinalProject extends JComponent implements KeyListener{
     BufferedImage cheese4 = ImageHelper.loadImage("pics//cheese.png");
     BufferedImage cheese5 = ImageHelper.loadImage("pics//cheese.png");
     
+    //example characters
+    //on instruction page
+    BufferedImage exMouse = ImageHelper.loadImage("pics//mouse.png");
+    BufferedImage exCat = ImageHelper.loadImage("pics//cat.png");
+    BufferedImage exCheese = ImageHelper.loadImage("pics//cheese.png");
+    double exTheta = 500;
+    int exY;
     
+    
+    //variables
     boolean left = false;
     boolean right = false;
     boolean up = false;
@@ -181,12 +190,18 @@ public class FinalProject extends JComponent implements KeyListener{
             g.fillRect(0, 0, 800, 600);
             
             g.setColor(Color.black);
-            g.drawString("Instructions", 380, 100);
-            g.drawString("The goal of this game is to get all the green circles that are on the screen.", 200, 130);
-            g.drawString("Use arrow keys to move your player." , 200, 150);
-            g.drawString("Use space bar to gain a life by hitting a green circle.", 200, 170);
-            g.drawString("You lose a life if you hit a black circle.", 200, 190);
-            g.drawString("Press space bar to move onto the next stage.", 200, 250);
+            g.drawString("EAT THE CHEESE", 370, 100);
+            
+            g.drawImage(exCheese, (int) exTheta, exY + 190, null);
+            g.drawImage(exMouse, (int) exTheta - 100, exY + 190, null);
+            g.drawImage(exCat, (int) exTheta - 200, exY + 190, null);
+            
+            g.drawString("Instructions", 380, 300);
+            g.drawString("The goal of this game is to get all the green circles that are on the screen.", 200, 330);
+            g.drawString("Use arrow keys to move your player." , 200, 350);
+            g.drawString("Use space bar to gain a life by hitting a green circle.", 200, 370);
+            g.drawString("You lose a life if you hit a black circle.", 200, 390);
+            g.drawString("Press space bar to move onto the next stage.", 200, 450);
             
             //if spacebar is pressed
             if(spacebar)
@@ -199,12 +214,6 @@ public class FinalProject extends JComponent implements KeyListener{
         {
             ////paint circles
             
-            
-            
-            
-            
-            
-
             //white circle1
             g.setColor(Color.white);
             g.fillOval(circle1X, circle1Y, 26, 26);
