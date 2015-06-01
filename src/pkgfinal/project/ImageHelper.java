@@ -1,3 +1,5 @@
+package pkgfinal.project;
+
 /**
  * @(#)ImageHelper.java
  *

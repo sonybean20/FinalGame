@@ -40,7 +40,15 @@ public class FinalProject extends JComponent implements KeyListener{
     //characters-mouse, cat, cheese
     BufferedImage mouse = ImageHelper.loadImage("pics//mouse.png");
     BufferedImage cat1 = ImageHelper.loadImage("pics//cat.png");
+    BufferedImage cat2 = ImageHelper.loadImage("pics//cat.png");
+    BufferedImage cat3 = ImageHelper.loadImage("pics//cat.png");
+    BufferedImage cat4 = ImageHelper.loadImage("pics//cat.png");
+    BufferedImage cat5 = ImageHelper.loadImage("pics//cat.png");
     BufferedImage cheese1 = ImageHelper.loadImage("pics//cheese.png");
+    BufferedImage cheese2 = ImageHelper.loadImage("pics//cheese.png");
+    BufferedImage cheese3 = ImageHelper.loadImage("pics//cheese.png");
+    BufferedImage cheese4 = ImageHelper.loadImage("pics//cheese.png");
+    BufferedImage cheese5 = ImageHelper.loadImage("pics//cheese.png");
     
     
     boolean left = false;
@@ -76,7 +84,7 @@ public class FinalProject extends JComponent implements KeyListener{
     int playerCenterX = playerX + 13;
     int playerCenterY = playerY + 13;
     
-    //Black Circles - cat
+    //white Circles - cat
     int circle1X = 400;
     int circle1Y = 100;
     int circle1Radius = 13;
@@ -191,38 +199,36 @@ public class FinalProject extends JComponent implements KeyListener{
         {
             ////paint circles
             
-            //character
-            Color me = new Color(237, 125, 69);
-            g.setColor(me);
-            g.fillOval(playerX, playerY, 26, 26);
-            g.drawImage(mouse, playerX, playerY, null);
-            g.drawImage(cat1, playerX, playerY, null);
-            g.drawImage(cheese1, playerX, playerY, null);
+            
+            
+            
+            
             
 
-            //black circle1
-            g.setColor(Color.BLACK);
+            //white circle1
+            g.setColor(Color.white);
             g.fillOval(circle1X, circle1Y, 26, 26);
-
-            //black circle2
-            g.setColor(Color.BLACK);
+            g.drawImage(cat1, circle1X+2, circle1Y+3, null);    
+            
+            //white circle2
+            g.setColor(Color.white);
             g.fillOval(circle2X, circle2Y, 26, 26);
-
-            //black circle3
-            g.setColor(Color.BLACK);
+            g.drawImage(cat2, circle2X+2, circle2Y+3, null);
+            
+            //white circle3
+            g.setColor(Color.white);
             g.fillOval(circle3X, circle3Y, 26, 26);
-
-            //black circle3
-            g.setColor(Color.BLACK);
-            g.fillOval(circle3X, circle3Y, 26, 26);
-
-            //black circle4
-            g.setColor(Color.BLACK);
+            g.drawImage(cat3, circle3X+2, circle3Y+3, null);
+            
+            //white circle4
+            g.setColor(Color.white);
             g.fillOval(circle4X, circle4Y, 26, 26);
-
-            //black circle5
-            g.setColor(Color.BLACK);
+            g.drawImage(cat4, circle4X+2, circle4Y+3, null);
+            
+            //white circle5
+            g.setColor(Color.white);
             g.fillOval(circle5X, circle5Y, 26, 26);
+            g.drawImage(cat5, circle5X+2, circle5Y+3, null);
 
             //green circle1
             Color gCircle = new Color(103, 202, 121);
@@ -230,6 +236,7 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 g.setColor(gCircle);
                 g.fillOval(gCircle1X, gCircle1Y, 26, 26);
+                g.drawImage(cheese1, gCircle1X+2, gCircle1Y, null);
             }else
             {
                 gCircle1X = -13;
@@ -241,6 +248,7 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 g.setColor(gCircle);
                 g.fillOval(gCircle2X, gCircle2Y, 26, 26);
+                g.drawImage(cheese2, gCircle2X+2, gCircle2Y, null);
             }else
             {
                 gCircle2X = -13;
@@ -252,6 +260,7 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 g.setColor(gCircle);
                 g.fillOval(gCircle3X, gCircle3Y, 26, 26);
+                g.drawImage(cheese3, gCircle3X+2, gCircle3Y, null);
             }else
             {
                 gCircle3X = -13;
@@ -263,6 +272,7 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 g.setColor(gCircle);
                 g.fillOval(gCircle4X, gCircle4Y, 26, 26);
+                g.drawImage(cheese4, gCircle4X+2, gCircle4Y, null);
             }else
             {
                 gCircle4X = -13;
@@ -274,12 +284,18 @@ public class FinalProject extends JComponent implements KeyListener{
             {
                 g.setColor(gCircle);
                 g.fillOval(gCircle5X, gCircle5Y, 26, 26);
+                g.drawImage(cheese5, gCircle5X+2, gCircle5Y, null);
             }else
             {
                 gCircle5X = -13;
                 gCircle5Y = -13;
             }
-                        
+            
+            //player character
+            Color me = new Color(237, 125, 69);
+            g.setColor(me);
+            g.fillOval(playerX, playerY, 26, 26);
+            g.drawImage(mouse, playerX+1, playerY+5, null);            
             
             //Show lives left
             g.setColor(Color.black);
@@ -438,7 +454,7 @@ public class FinalProject extends JComponent implements KeyListener{
             if(stage == 1) //stage 1
             {
                  
-                //black circle1 2 3 4 5
+                //white circle1 2 3 4 5
                 //moving horizontally
                 if(moving)
                 {
@@ -469,29 +485,29 @@ public class FinalProject extends JComponent implements KeyListener{
             }else if(stage == 2)
             {
                 
-                //black circles - circle motion
+                //white circles - circle motion
                 
-                //black circle 1
+                //white circle 1
                 theta1 += 0.07;
                 circle1X = (int) (100+Math.cos(theta1)*80) - 13;
                 circle1Y = (int) (100+Math.sin(theta1)*80) - 13;
                 
-                //black circle 2
+                //white circle 2
                 theta2 += 0.08;
                 circle2X = (int) (700+Math.cos(theta2)*60) - 13;
                 circle2Y = (int) (100+Math.sin(theta2)*60) - 13;
                 
-                //black circle 3
+                //white circle 3
                 theta3 += 0.09;
                 circle3X = (int) (400+Math.cos(theta3)*100) - 13;
                 circle3Y = (int) (300+Math.sin(theta3)*100) - 13;
                 
-                //black circle 4
+                //white circle 4
                 theta4 += 0.08;
                 circle4X = (int) (100+Math.cos(theta4)*70) - 13;
                 circle4Y = (int) (500+Math.sin(theta4)*70) - 13;
                 
-                //black circle 5
+                //white circle 5
                 theta5 += 0.04;
                 circle5X = (int) (700+Math.cos(theta5)*60) - 13;
                 circle5Y = (int) (500+Math.sin(theta5)*60) - 13;
@@ -564,53 +580,58 @@ public class FinalProject extends JComponent implements KeyListener{
             
             
             //collisions
-            //black circle collision
-            if(distance(playerCenterX, playerCenterY, circle1CenterX, circle1CenterY) < 26 ||
-                    distance(playerCenterX, playerCenterY, circle2CenterX, circle2CenterY) < 26 ||
-                    distance(playerCenterX, playerCenterY, circle3CenterX, circle3CenterY) < 26 ||
-                    distance(playerCenterX, playerCenterY, circle4CenterX, circle4CenterY) < 26 ||
-                    distance(playerCenterX, playerCenterY, circle5CenterX, circle5CenterY) < 26 )
+            //during game
+            if(stage > 0)
             {
-                //reset player position
-                playerX = 400;
-                playerY = 550;
-                life -=1;
+                //white circle collision
+                if(distance(playerCenterX, playerCenterY, circle1CenterX, circle1CenterY) < 26 ||
+                        distance(playerCenterX, playerCenterY, circle2CenterX, circle2CenterY) < 26 ||
+                        distance(playerCenterX, playerCenterY, circle3CenterX, circle3CenterY) < 26 ||
+                        distance(playerCenterX, playerCenterY, circle4CenterX, circle4CenterY) < 26 ||
+                        distance(playerCenterX, playerCenterY, circle5CenterX, circle5CenterY) < 26 )
+                {
+                    //reset player position
+                    playerX = 400;
+                    playerY = 550;
+                    life -=1;
+                }
+
+                //green circle1 collision
+                if(gCircle1 && distance(playerCenterX, playerCenterY, gCircle1CenterX, gCircle1CenterY) < 26 && spacebar)
+                {
+                    gCircle1 = false; //make it disappear
+                    life +=1;
+                }
+
+                //green circle2 collision
+                if(gCircle2 && distance(playerCenterX, playerCenterY, gCircle2CenterX, gCircle2CenterY) < 26 && spacebar)
+                {
+                    gCircle2 = false; //make it disapear
+                    life +=1;
+                }
+
+                //green circle3 collision
+                if(gCircle3 && distance(playerCenterX, playerCenterY, gCircle3CenterX, gCircle3CenterY) < 26 && spacebar)
+                {
+                    gCircle3 = false; //make it disappear
+                    life +=1;
+                }
+
+                //green circle4 collision
+                if(gCircle4 && distance(playerCenterX, playerCenterY, gCircle4CenterX, gCircle4CenterY) < 26 && spacebar)
+                {
+                    gCircle4 = false; //make it disappear
+                    life +=1;
+                }
+
+                //green circle5 collision
+                if(gCircle5 && distance(playerCenterX, playerCenterY, gCircle5CenterX, gCircle5CenterY) < 26 && spacebar)
+                {
+                    gCircle5 = false; //make it disappear
+                    life +=1;
+                }
             }
-            
-            //green circle1 collision
-            if(gCircle1 && distance(playerCenterX, playerCenterY, gCircle1CenterX, gCircle1CenterY) < 26 && spacebar)
-            {
-                gCircle1 = false; //make it disappear
-                life +=1;
-            }
-            
-            //green circle2 collision
-            if(gCircle2 && distance(playerCenterX, playerCenterY, gCircle2CenterX, gCircle2CenterY) < 26 && spacebar)
-            {
-                gCircle2 = false; //make it disapear
-                life +=1;
-            }
-            
-            //green circle3 collision
-            if(gCircle3 && distance(playerCenterX, playerCenterY, gCircle3CenterX, gCircle3CenterY) < 26 && spacebar)
-            {
-                gCircle3 = false; //make it disappear
-                life +=1;
-            }
-            
-            //green circle4 collision
-            if(gCircle4 && distance(playerCenterX, playerCenterY, gCircle4CenterX, gCircle4CenterY) < 26 && spacebar)
-            {
-                gCircle4 = false; //make it disappear
-                life +=1;
-            }
-            
-            //green circle5 collision
-            if(gCircle5 && distance(playerCenterX, playerCenterY, gCircle5CenterX, gCircle5CenterY) < 26 && spacebar)
-            {
-                gCircle5 = false; //make it disappear
-                life +=1;
-            }
+                
             
             
             // GAME LOGIC ENDS HERE 
