@@ -191,7 +191,7 @@ public class FinalProject extends JComponent implements KeyListener{
             
             g.setColor(Color.black);
             g.drawString("EAT THE CHEESE", 370, 100);
-            
+            exY = (int) (Math.cos(0.07*exTheta)*25);
             g.drawImage(exCheese, (int) exTheta, exY + 190, null);
             g.drawImage(exMouse, (int) exTheta - 100, exY + 190, null);
             g.drawImage(exCat, (int) exTheta - 200, exY + 190, null);
@@ -337,7 +337,16 @@ public class FinalProject extends JComponent implements KeyListener{
             
             // all your game rules and move is done in here
             // GAME LOGIC STARTS HERE 
-           
+           if(stage == 0)
+           {
+               if(exTheta == 1100)
+               {
+                   exTheta = 0;
+               }
+               exTheta += 1;
+           }
+            
+            
             //if there are no lives left
            if(life == 0)
             {
