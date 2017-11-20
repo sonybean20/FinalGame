@@ -1,12 +1,5 @@
 package pkgfinal.project;
 
-/*
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -19,21 +12,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-
-/**
- *
- * @author shins5563
- */
-
-// make sure you rename this class if you are doing a copy/paste
 public class FinalProject extends JComponent implements KeyListener{
 
     // Height and Width of our game
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
     
-    // sets the framerate and delay for our game
-    // you just need to select an approproate framerate
+    // sets the framerate and delay for game
     long desiredFPS = 60;
     long desiredTime = (1000)/desiredFPS;
     
@@ -335,7 +320,6 @@ public class FinalProject extends JComponent implements KeyListener{
             // determines when we started so we can keep a framerate
             startTime = System.currentTimeMillis();
             
-            // all your game rules and move is done in here
             // GAME LOGIC STARTS HERE 
            if(stage == 0)
            {
